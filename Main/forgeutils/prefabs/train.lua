@@ -206,12 +206,12 @@ end
 --- Note, packages requires the same syntax as passed into regular prefabs.
 ---@param carModelName string The name of the car model. This will also be used as it's model skeleton.
 ---@param assetPackageLoader table The assetPackageLoader to use.
----@param numFlexiChannels integer The number of flexi channels. Ranges from 0 to 4.
+---@param numFlexiChannels integer The number of flexi channels. Undocumented behaviour above 4 channels.
 ---@param mass number The mass, in kilograms, of the trian car. Used in physics. Usually around 1000.0
 ---@return table
 function TrainLibrary.GetSimpleTrainComponents(carModelName, assetPackageLoader, numFlexiChannels, mass)
     local semantics = {}
-    local numChannels = math.max(0, math.min(4, numFlexiChannels))
+    local numChannels = numFlexiChannels
 
     for i = 1, numChannels do
         local semantic = {
