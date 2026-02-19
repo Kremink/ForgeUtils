@@ -69,6 +69,14 @@ function TrackedRideBuilder:withSimulationData(simulationData)
     return self
 end
 
+--- Adds a ride param to this tracked ride.
+--- @param param forgeutils.builders.data.trackedride.RideParam
+--- @return self
+function TrackedRideBuilder:withParam(param)
+    self.params[#self.params + 1] = param
+    return self
+end
+
 --- Adds ride data for this tracked ride.
 --- @param rideData forgeutils.builders.data.trackedride.RideData
 --- @return self
